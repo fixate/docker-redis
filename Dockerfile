@@ -17,6 +17,7 @@ RUN apt-get install -y redis-server
 
 RUN mkdir -p /etc/service/redis
 ADD redis-server.sh /etc/service/redis/run
+ADD redis.conf /etc/redis/redis.conf
 
 EXPOSE 6379
 
