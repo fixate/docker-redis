@@ -21,4 +21,6 @@ ADD redis.conf /etc/redis/redis.conf
 
 EXPOSE 6379
 
+VOLUME ["/var/redis/data", "/var/redis/logs"]
+
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
