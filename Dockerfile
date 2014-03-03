@@ -19,6 +19,8 @@ RUN mkdir -p /etc/service/redis
 ADD redis-server.sh /etc/service/redis/run
 ADD redis.conf /etc/redis/redis.conf
 
+RUN echo 'vm.overcommit_memory = 1' >> /etc/sysctl.conf && sysctl vm.overcommit_memory=1
+
 EXPOSE 6379
 
 VOLUME ["/var/redis/data", "/var/redis/logs"]
