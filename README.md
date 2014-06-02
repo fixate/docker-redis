@@ -13,7 +13,7 @@ CONTAINER=$(docker run -d \
              -p 6379 \
              -v="/var/redis/data:/var/redis/data:rw" \
              -v="/var/redis/logs:/var/redis/logs:rw" \
-              -d "fixate/redis:2.8.6")
+              -d "fixate/redis-server:2.8.6")
 # Start up:
 CONTAINER=$(docker start fixate_redis)
 # Get the IP:
