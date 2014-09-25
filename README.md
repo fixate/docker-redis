@@ -15,9 +15,9 @@ Set overcommit memory:
 *We can no longer set it while building the image*
 
 ```
-docker run -t --privileged --cidfile="cid.tmp" redis_image /bin/bash -c 'sysctl vm.overcommit_memory=1'
+docker run -t --privileged --cidfile="cid.tmp" fixate/redis-server /bin/bash -c 'sysctl vm.overcommit_memory=1'
 docker wait $(< cid.tmp)
-docker commit $(< cid.tmp) fixate/redis_server
+docker commit $(< cid.tmp) fixate/redis-server
 rm cid.tmp
 ```
 
